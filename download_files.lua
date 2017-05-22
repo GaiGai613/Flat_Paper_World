@@ -21,4 +21,5 @@ classes = {
 {name = "tree",type = ".lua"},
 {name = "visibility",type = ".lua"},
 {name = "world",type = ".lua"}
+{name = "ui",type = ".png"}
 }

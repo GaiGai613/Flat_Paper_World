@@ -7,7 +7,7 @@ sprite()
 TRYUPDATE = false
 
 function setup()
-    if TRYUPDATE then download() end -- Only for vsc develop mode.
+    if TRYUPDATE then download() end
     -- math.randomseed(1)
     rectMode(CENTER)
     input_image()

@@ -1,5 +1,9 @@
+--Download setup.
+if not readLocalData("VERSION") then saveLocalData("VERSION","Beta 0.1.0") end
+VERSION = readLocalData("VERSION")
+
 function download()
-    url = "https://raw.githubusercontent.com/GaiGai613/Flat_Gate/master/"
+    url = "https://raw.githubusercontent.com/GaiGai613/Flat_Paper_World/master/"
     now_tab = 1
 
     if not (string.sub(VERSION,1,17) == "NEED UPDATE FILES") then

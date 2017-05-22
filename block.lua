@@ -9,7 +9,7 @@ function block:init(y,x,id)
     self.name = self_info.name
     self.chunk_belong = math.floor((x-1)/world.chunk_size)
     self.info = self_info
-    self.visibility = game.max_visibility
+    self.visibility = 0
     self:special_setup()
     self.aabb = aabb(self)
     self.size = vec2(self.width,self.height)

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Unknown</string>
+	<key>Buffer Order</key>
+	<array>
+		<string>aabb</string>
+		<string>biome_gens</string>
+		<string>biome_info</string>
+		<string>block</string>
+		<string>blocks_info</string>
+		<string>camera</string>
+		<string>chunk</string>
+		<string>controller_action</string>
+		<string>controller_movement</string>
+		<string>damage_block</string>
+		<string>game</string>
+		<string>flat_ui</string>
+		<string>input_image</string>
+		<string>Main</string>
+		<string>noise_map</string>
+		<string>player</string>
+		<string>terrain</string>
+		<string>tree</string>
+		<string>visibility</string>
+		<string>world</string>
+	</array>
+	<key>Description</key>
+	<string>No description available</string>
+	<key>Icon</key>
+	<string>Icon.png</string>
+</dict>
+</plist>

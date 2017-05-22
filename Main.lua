@@ -13,6 +13,7 @@ VERSION = readLocalData("VERSION")
 TRYUPDATE = false
 
 function setup()
+    if TRYUPDATE or REDOWNLOAD then download() end -- Only for vsc develop mode.
     -- math.randomseed(1)
     rectMode(CENTER)
     input_image()

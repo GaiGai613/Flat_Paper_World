@@ -19,7 +19,7 @@ end
 
 function input_image()
     local tw,th = 8,8
-    local i = readImage("Project:block_tiles")
+    local i = readImage("Documents:block_tiles")
     if (i.width/tw)%1 ~= 0 or (i.height/th)%1 ~= 0 then displayMode(OVERLAY) print("Texture Not Support") close() end
     for x = 1 , i.width/tw do
         for y = 1 , 1--[[i.height/th]] do
@@ -31,7 +31,7 @@ function input_image()
     local ui_info = {
     {name = "block_select",x = 1,y = 1,w = 8,h = 8}
     }
-    local i = readImage("Project:ui")
+    local i = readImage("Documents:ui")
     for k , oi in pairs(ui_info) do
         local ni = i:copy(oi.x,oi.y,oi.w,oi.h)
         sprites[oi.name] = ni

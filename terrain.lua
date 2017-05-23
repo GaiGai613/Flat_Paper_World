@@ -50,7 +50,7 @@ function terrain:new_world_setup()
     end
     
 
-    local x1,x2 = (-cc+1)*world.chunk_size,cc*world.chunk_count-1
+    local x1,x2 = (-cc+1)*world.chunk_size,cc*world.chunk_size-1
     local y1,y2 = 0,world.height
     print(i)
     visibility:update(x1,y1,x2,y2)

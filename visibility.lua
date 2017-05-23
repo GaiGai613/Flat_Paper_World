@@ -29,7 +29,7 @@ function visibility:update(x1,y1,x2,y2)
             local x,y = x2-(x-x1),y2-(y-y1)
             -- If block not exist.
             local b = game:check_if_block_exist(vec2(x,y))
-            if not b or b.id == 0 then
+            if not b or b.id == 0 then --Check if the block is air.
                 goto vi_up_next
             end
 

@@ -15,7 +15,11 @@ function controller_action:draw_with_player()
     local b = game.block_size
     if self.select_block_x then
         sprite(sprites["block_select"],self.select_block_x*b,self.select_block_y*b,b)
-        self:build_block(self.select_block_x,self.select_block_y,self.player.select)
+        if self.player.select ~= 0 then
+            self:build_block(self.select_block_x,self.select_block_y,self.player.select)
+        else
+            self:destory_block(self.select_block_x,self.select_block_y)
+        end
     end
 end
 

@@ -56,6 +56,15 @@ function block:change(id)
     self.info = b
 end
 
+function block:update_round_blocks()
+    local t = {vec2(1,0),vec2(1,0),vec2(0,1),vec2(0,-1)}
+    local bs = world.blocks
+    for k , one_p in pairs(t) do 
+        bs[one_p.y][one_p.x]:update()
+    end
+end
+
 function block:destory()
+    if self.tree then self.tree.destory = true
     self = nil
 end

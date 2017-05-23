@@ -58,6 +58,6 @@ function visibility_round_blocks(p)
         mbv = math.max(mbv,b.visibility)
     end
 
-    mbv = math.min(0,mbv-1)
+    mbv = math.max(0,mbv-1)
     return mbv
 end

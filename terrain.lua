@@ -1,16 +1,20 @@
 terrain = class()
 
 function terrain:init()
+    world.seed = os.time()
+    math.randomseed(world.seed)
+    print(seed)
+
     chunk_count = 3 -- Total amount = chunk_count*2-1
     chunk_count = chunk_count*2-1
     
     -- Noise varibles.
     noise_layer = 8
     noise_x_scale = 0.03
-    noise_y_scale = 0.1
+    noise_y_scale = 0.12
     
     -- World
-    world.chunk_size = 2
+    world.chunk_size = 16
     world.width,world.height = world.chunk_size*chunk_count,200
     world.chunks = {}
     world.middle = 0.62
@@ -46,7 +50,7 @@ function terrain:new_world_setup()
     end
     
 
-    local x1,x2 = (-cc+1)*chunk_size,cc*chunk_count-1
+    local x1,x2 = (-cc+1)*world.chunk_size,cc*world.chunk_count-1
     local y1,y2 = 0,world.height
     print(i)
     visibility:update(x1,y1,x2,y2)

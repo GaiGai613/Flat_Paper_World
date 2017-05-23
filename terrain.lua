@@ -2,6 +2,7 @@ terrain = class()
 
 function terrain:init()
     chunk_count = 3 -- Total amount = chunk_count*2-1
+    chunk_count = chunk_count*2-1
     
     -- Noise varibles.
     noise_layer = 8
@@ -35,7 +36,8 @@ end
 function terrain:new_world_setup()
     self:array_setup_y()
     
-    for i = -math.ceil(chunk_count/2) , math.floor(chunk_count/2+1) do -- Create every chunk.
+    local cc = (chunk_count+1)/2
+    for i = -math.ceil(cc/2) , math.floor(cc/2+1) do -- Create every chunk.
         world.chunks[i] = chunk(i*world.chunk_size,1)
     end
     
@@ -43,14 +45,11 @@ function terrain:new_world_setup()
         one_chunk:create_terrain()
     end
     
-    for i = -2 , 2 do
-        -- for i , one_chunk in pairs(world.chunks) do
-        local one_chunk = world.chunks[i]
-        local x1,x2 = one_chunk.start_x,one_chunk.end_x
-        local y1,y2 = 0,world.height
-        print(i)
-        visibility:update(x1,y1,x2,y2)
-    end
+
+    local x1,x2 = (-cc+1)*chunk_size,cc*chunk_count-1
+    local y1,y2 = 0,world.height
+    print(i)
+    visibility:update(x1,y1,x2,y2)
 end
 
 function terrain:create_noise_seeds(l)

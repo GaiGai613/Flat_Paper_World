@@ -61,12 +61,13 @@ function block:update_round_blocks()
     local bs = world.blocks
     for k , one_p in pairs(t) do 
         local p = one_p+vec2(self.x,self.y)
-        bs[one_p.y][one_p.x]:update()
+        local b = game:check_if_block_exist(p)
+        if b then b:update() end
     end
 end
 
 function block:destory()
     if self.tree then self.tree.destory = true end
-    world.blocks[self.y][self.y] = block(self.y,self.x,0)
+    world.blocks[self.y][self.x] = block(self.y,self.x,0)
     self:update_round_blocks()
 end

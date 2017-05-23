@@ -61,7 +61,13 @@ function controller_action:build_block(x,y,id)
 end
 
 function controller_action:destory_block(x,y)
+    local b = game:check_if_block_exist(vec2(x,y))
+    if b then
+        if b.id == id then return end
+    end
+    local mv = game.max_visibility    
     world.blocks[y][x]:destory()
+    visibility:update(x-mv,y-mv,x+mv,y+mv)
 end
 
 function controller_action:touched(touch)

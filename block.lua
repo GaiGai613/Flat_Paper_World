@@ -65,6 +65,6 @@ function block:update_round_blocks()
 end
 
 function block:destory()
-    if self.tree then self.tree.destory = true
+    if self.tree then self.tree.destory = true end
     self = nil
 end

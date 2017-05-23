@@ -56,6 +56,10 @@ function controller_action:build_block(x,y,id)
     visibility:update(x-mv,y-mv,x+mv,y+mv)
 end
 
+function controller_action:destory_block(x,y)
+    world.blocks[y][x]:destory()
+end
+
 function controller_action:touched(touch)
     
 end

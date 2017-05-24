@@ -12,11 +12,15 @@ function tree:generate()
         self.height = math.random(20,25) -- Height of the tree. CB
         self.leaf_width,self.leaf_height = math.random(3,5),math.random(3,5)-- Size of the tree.CB
         for y = 0 , self.height do
-            world.blocks[y+self.y][self.x] = block(y+self.y,self.x,5)
+            local b = block(y+self.y,self.x,5)
+            b.tree = self
+            world.blocks[y+self.y][self.x] = b
         end
         for x = -self.leaf_width , self.leaf_width do
             for y = -self.leaf_height , self.leaf_height do
-                world.blocks[self.height+self.y+y][self.x+x] = block(self.height+self.y+y,self.x+x,6)
+                local b = block(y+self.y,self.x,5)
+                b.tree = self
+                world.blocks[self.height+self.y+y][self.x+x] = b
             end
         end
     end

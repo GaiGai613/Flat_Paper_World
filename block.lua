@@ -67,6 +67,7 @@ function block:update_round_blocks()
 end
 
 function block:destory()
+
     if self.tree then self.tree.destory = true end
     world.blocks[self.y][self.x] = block(self.y,self.x,0)
     self:update_round_blocks()

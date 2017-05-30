@@ -18,7 +18,7 @@ function tree:generate()
         end
         for x = -self.leaf_width , self.leaf_width do
             for y = -self.leaf_height , self.leaf_height do
-                local b = block(y+self.y,self.x,5)
+                local b = block(y+self.y,self.x,6)
                 b.tree = self
                 world.blocks[self.height+self.y+y][self.x+x] = b
             end
